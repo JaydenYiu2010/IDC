@@ -11,8 +11,10 @@ def helper(inp:str)->int:
     # make sure not to pass back variable unless its int
     while True:
         try:
-            # NO breaks and continues, just return, industry standard, strip to make sure that no spaces are before or after
+            # NO breaks and continues, just return. 
+            # This is the industry standard, strip to make sure that no blank spaces are before or after in the string
             return int(inp.strip())
+        # "catching" the error python throws when it fails to cast a type
         except ValueError:
             # error message
             print("Could not cast into int")
@@ -28,8 +30,10 @@ def one()->None:
     if x != None:
         # standard modulo to see if number is odd or even
         if x % 2 == 0:
+            # lets the user know the number is even
             print("This number is even")
         else:
+            #lets the user know the number is odd
             print("This number is odd")
 # Ex 2.
 def two()->None:
@@ -42,6 +46,8 @@ def two()->None:
         # check if there is any remainder, none then fully divisble
         if num1 % num2 == 0:
             print("The numerator is divisible by the denominator.")
+            # `f` is used in newer versions of python that replaces the `.format()` function, 
+            # allowing developers to put values RIGHT IN the string without external functions, mimicking javascript
             print(f"{num1}/{num2} = {num1//num2}")
         else:
             print("The numerator is not fully divisble by the denominator.")
@@ -72,10 +78,11 @@ def three()->None:
             print("The numerator is not fully divisble by the denominator.")
     # else means it has to be num1 == num2, therefore always returning fully divisble
     else:
+        # again, `f` is used so that we do not need to put a `.format()` at the end, which makes it harder to read
         print(f"{num1} = {num2} so therefore, it would always be fully divisble")
         print(f"{num1}/{num2} = {num1//num2}")
 
-# driver to call Ex 1-3
+# driver to call Ex 1-3 to be organized
 one()
 two()
 three()
